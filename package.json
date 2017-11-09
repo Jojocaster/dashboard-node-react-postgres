@@ -1,0 +1,17 @@
+{
+  "name": "dashboard-node-react",
+  "version": "1.0.0",
+  "description": "React Dashboard connected to Express and Postgres",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Beaudon",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}
