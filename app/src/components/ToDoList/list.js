@@ -7,7 +7,6 @@ import TaskForm from '../Tasks/form';
 class ToDoList extends Component {
   constructor(props) {
     super(props);
-    console.log(props, this.props);
     this.state = {
       tasks: [{
         id: 0, content: 'First todo'

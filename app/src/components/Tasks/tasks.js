@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import './tasks.css';
 
 import Card, { CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 
 class Task extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        // const tasks = this.props.tasks;
-
         const tasks = this.props.tasks.map((task, i) => (
           <Card className="task" key={i}>
             <CardContent>
@@ -34,4 +29,5 @@ class Task extends Component {
         );
     }
 }
+
 export default Task;
