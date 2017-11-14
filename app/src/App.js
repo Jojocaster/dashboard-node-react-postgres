@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './app.css';
 
-import ToDoList from './components/ToDoList/list';
+import ToDo from './components/ToDo/list';
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
               To get started, edit <code>src/App.js</code> and save to reload.
               <Link to="/todo">ToDo</Link>
             </p>
-          <Route path="/todo" component={ToDoList} test="test"/>
+          <Route path="/todo" component={ToDo}/>
         </div>
       </Router>
     );

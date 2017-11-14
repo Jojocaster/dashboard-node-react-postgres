@@ -11,7 +11,7 @@ class Task extends Component {
         const tasks = this.props.tasks.map((task, i) => (
           <Card className="task" key={i}>
             <CardContent>
-                <Typography type="body1">{task.content}</Typography>
+                <Typography type="body1">{task.title}</Typography>
                 <button onClick={() => this.props.remove(task.id)}>Remove</button>
             </CardContent>
           </Card>
