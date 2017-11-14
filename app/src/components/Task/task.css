@@ -1,23 +1,21 @@
-
-
 .task {
     margin: 10px 0;
 }
 
-.test-enter {
+.task-item-enter {
     opacity: 0;
 }
 
-.test-enter.test-enter-active {
+.task-item-enter.task-item-enter-active {
     opacity: 1;
     transition: opacity .2s ease-in;
 }
 
-.test-leave {
+.task-item-leave {
     opacity: 1;
 }
 
-.test-leave.test-leave-active {
+.task-item-leave.task-item-leave-active {
     opacity: 0;
     transition: opacity .2s ease-out;
 }

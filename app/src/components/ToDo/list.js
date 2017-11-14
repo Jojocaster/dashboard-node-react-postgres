@@ -2,8 +2,8 @@ import React, {Component}  from 'react';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 
 import './list.css';
-import Tasks from '../Tasks/tasks';
-import TaskForm from '../Tasks/form';
+import Task from '../Task/task';
+import TaskForm from '../Task/form';
 
 import ApiHelper from '../../helpers/api';
 
@@ -52,7 +52,7 @@ class ToDo extends Component {
       return (
         <div className="todolist">
           <TaskForm addTodo={this.addTodo.bind(this)}/>
-          <Tasks tasks={todos} remove={this.removeTodo.bind(this)} />
+          <Task tasks={todos} remove={this.removeTodo.bind(this)} />
           {/* <Route path={`${this.props.match.path}/:id`} render={(props) => */}
             {/* <TaskForm {...props} addTask={this.addTask.bind(this)}/> */}
           {/* }/> */}
