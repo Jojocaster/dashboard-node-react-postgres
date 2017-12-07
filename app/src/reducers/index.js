@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import tasks from './tasks';
+import tasks from 'reducers/tasks/';
 import todos from './todos';
 import visibilityFilter from './visibilityFilter';
 

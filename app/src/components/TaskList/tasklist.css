@@ -23,11 +23,3 @@
 .tasklist .task.active:after {
   transform: scaleY(1);
 }
-
-.test {
-  color: black;
-}
-
-.test.active {
-  color: red;
-}

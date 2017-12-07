@@ -4,7 +4,7 @@ module.exports = {
   create(req, res) {
     return Task
       .create({
-        title: req.body.content,
+        title: req.body.title,
         content: req.body.content,
         todoId: req.params.todoId,
         due: req.body.due

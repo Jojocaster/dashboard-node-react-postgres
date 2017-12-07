@@ -1,6 +1,6 @@
 import {ADD_TASK_SUCCESS, REMOVE_TASK_SUCCESS, TOGGLE_TASK_SUCCESS, FETCH_TASKS_SUCCESS} from 'actions/tasks';
 
-const tasks = (state = [], action) => {
+const items = (state = [], action) => {
   switch (action.type) {
     case ADD_TASK_SUCCESS:
       return [
@@ -27,4 +27,4 @@ const tasks = (state = [], action) => {
   }
 }
 
-export default tasks;
+export default items;

@@ -5,7 +5,7 @@ import TaskList from 'components/TaskList';
 
 const getFilteredTasks = (tasks, match) => {
   if(match.params.id) {
-    return tasks.filter((task) => {
+    return tasks.filter(task => {
       return task.todoId === parseInt(match.params.id, 10);
     });
   } else {
@@ -15,7 +15,8 @@ const getFilteredTasks = (tasks, match) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    tasks: getFilteredTasks(state.tasks, ownProps.match)
+    tasks: getFilteredTasks(state.tasks.items, ownProps.match),
+    error: state.tasks.error
   }
 }
 

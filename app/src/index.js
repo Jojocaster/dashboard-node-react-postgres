@@ -14,6 +14,10 @@ const store = createStore(
   applyMiddleware(thunk.withExtraArgument(ApiHelper))
 );
 
+store.subscribe(() => {
+  console.log('new state', store.getState());
+})
+
 console.log(store.getState());
 
 ReactDOM.render(

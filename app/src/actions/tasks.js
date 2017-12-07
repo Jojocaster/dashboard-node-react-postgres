@@ -1,5 +1,6 @@
 export const ADD_TASK = 'ADD_TASK';
 export const ADD_TASK_SUCCESS = 'ADD_TASK_SUCCESS';
+export const ADD_TASK_ERROR = 'ADD_TASK_ERROR';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const REMOVE_TASK_SUCCESS = 'REMOVE_TASK_SUCCESS';
 export const TOGGLE_TASK = 'TOGGLE_TASK';
@@ -23,14 +24,21 @@ export function fetchTasksSuccess(items) {
 export function addTask(task) {
   return (dispatch, getState, api) => {
     api.addTask(task)
-    .then((response) => {
+    .then(response => {
       dispatch(addTaskSuccess(response.data))
-    });
+    })
+    .catch(response => {
+      dispatch(addTaskError(`Sorry, we couldn't add this task`))
+    })
   }
 }
 
 export function addTaskSuccess(task) {
   return {type: ADD_TASK_SUCCESS, task};
+}
+
+export function addTaskError(error) {
+  return {type: ADD_TASK_ERROR, error}
 }
 
 export function toggleTask(task) {
