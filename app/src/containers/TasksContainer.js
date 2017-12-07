@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchTasks, toggleTask } from 'actions/tasks';
+import { fetchTasks, removeTask , toggleTask } from 'actions/tasks';
 import TaskList from 'components/TaskList';
 
 const getFilteredTasks = (tasks, match) => {
@@ -24,7 +24,10 @@ const mapDispatchToProps = dispatch => {
     fetchTasks: () => {
       dispatch(fetchTasks())
     },
-    onTaskClick: task => {
+    removeTask: task => {
+      dispatch(removeTask(task))
+    },
+    toggleTask: task => {
       dispatch(toggleTask(task))
     }
   }

@@ -21,8 +21,8 @@ const ApiHelper = {
   },
 
   toggleTask(task) {
-    return api.put(`/todos/${task.todoId}/${task.id}`, {
-      complete: task.complete 
+    return api.put(`/todos/${task.todoId}/items/${task.id}`, {
+      complete: !task.complete 
     });
   },
 
@@ -32,8 +32,8 @@ const ApiHelper = {
     });
   },
 
-  removeTodo(id) {
-    return api.delete(`/todos/${id}`);
+  removeTask(task) {
+    return api.delete(`/todos/${task.todoId}/items/${task.id}`);
   }
 }
 

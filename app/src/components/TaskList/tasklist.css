@@ -3,3 +3,31 @@
   padding: 20px;
   width: 100%;
 }
+
+.tasklist .task {
+  position: relative;
+}
+
+.tasklist .task:after {
+  background-color: #2ecc71;
+  content: '';
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform .1s ease-in;
+  transform: scaleY(0);
+  width: 3px;
+}
+
+.tasklist .task.active:after {
+  transform: scaleY(1);
+}
+
+.test {
+  color: black;
+}
+
+.test.active {
+  color: red;
+}

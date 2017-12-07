@@ -9,20 +9,17 @@ class TaskList extends Component {
     this.props.fetchTasks();
   }
 
-  componentWillReceiveProps() {
-    console.log(this.props);
-  }
-
   render() {
     const {
       tasks,
-      onTaskClick
+      removeTask,
+      toggleTask
     } = this.props;
 
     return (
       <div className="tasklist">
         {tasks.map(task => (
-          <Task key={task.id} task={task} onTaskClick={() => onTaskClick(task.id)} />
+          <Task key={task.id} task={task} removeTask={() => removeTask(task)} toggleTask={() => toggleTask(task)}/>
         ))}
       </div>
     )
@@ -36,7 +33,8 @@ TaskList.propTypes = {
       content: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  onTaskClick: PropTypes.func.isRequired
+  removeTask: PropTypes.func.isRequired,
+  toggleTask: PropTypes.func.isRequired
 }
 
 export default TaskList;

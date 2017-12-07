@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import Card, { CardContent } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 import DeleteIcon from 'material-ui-icons/Delete';
+import DoneIcon from 'material-ui-icons/Done';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
@@ -15,14 +16,17 @@ const styles = theme => ({
   },
 });
 
-const Task = ({task, onTaskClick, classes}) => (
-  <Card>
+const Task = ({task, removeTask, toggleTask, classes}) => (
+  <Card className={task.complete ? 'task active' : 'task'}>
+    <span className={task.complete ? 'test active' : 'test'}>Test</span>
     <CardContent>
       <Typography type="body1">{task.content}</Typography>
-      <IconButton onClick={onTaskClick} className={classes.button} aria-label="Delete">
+      <IconButton onClick={removeTask} className={classes.button} aria-label="Delete">
         <DeleteIcon />
       </IconButton>
-      <button >Remove</button>
+      <IconButton onClick={toggleTask} className={classes.button} aria-label="Delete">
+        <DoneIcon />
+      </IconButton>
     </CardContent>
   </Card>
   // <div onClick={onTaskClick}>{task.content}</div>

@@ -20,7 +20,23 @@
 
 .sidebar li {
   padding: 10px 0;
+  position: relative;
+  transition: background-color .2s ease;
   width: 100%;
+}
+
+.sidebar li:before {
+  background-color: #61dbfb;
+  content: '';
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform .1s ease-out, opacity 50ms ease;
+  width: 3px;
 }
 
 .sidebar li a {
@@ -30,5 +46,9 @@
 
 .sidebar li.active {
   background-color: #161616;
-  border-left: 3px solid #61dbfb;
+}
+
+.sidebar li.active:before {
+  opacity: 1;
+  transform: scaleY(1);
 }

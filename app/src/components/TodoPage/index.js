@@ -7,9 +7,15 @@ import TodosContainer from 'containers/TodosContainer';
 
 const TodoPage = (props) => (
   <div className="todo-page">
-    <TodosContainer {...props}/>
-    <AddTask />
-    <TasksContainer {...props}/>
+    <div className="todos-column">
+      <TodosContainer {...props}/>
+    </div>
+    <div className="tasks-column">
+      {props.match.params.id && (
+        <AddTask />
+      )}
+      <TasksContainer {...props}/>
+    </div>
   </div>
 )
 

@@ -1,4 +1,4 @@
-import {ADD_TASK_SUCCESS, REMOVE_TASK, TOGGLE_TASK, FETCH_TASKS_SUCCESS} from 'actions/tasks';
+import {ADD_TASK_SUCCESS, REMOVE_TASK_SUCCESS, TOGGLE_TASK_SUCCESS, FETCH_TASKS_SUCCESS} from 'actions/tasks';
 
 const tasks = (state = [], action) => {
   switch (action.type) {
@@ -7,19 +7,18 @@ const tasks = (state = [], action) => {
         ...state,
         action.task
       ];
-    case TOGGLE_TASK:
+    case TOGGLE_TASK_SUCCESS:
       return state.map((task, i) => {
-        if(i === action.id) {
+        if(task.id === action.task.id) {
           return Object.assign({}, task, {
-            content: task.content,
-            completed: !task.completed
+            complete: !task.complete
           });
         }
         return task;
       })
-    case REMOVE_TASK:
+    case REMOVE_TASK_SUCCESS:
       return state.filter(task => {
-        return task.id !== action.id
+        return task.id !== action.task.id
       })
     case FETCH_TASKS_SUCCESS:
       return action.items;

@@ -21,6 +21,8 @@ To run the react app, go to /app and run
 > yarn start
 
 ## More
+To generate a new model, just type: 
+> sequelize model:create --name MODEL_NAME --attributes title:string,content:string ...
 
-If you need to make a change on the models, don't forget to run migrations afterwards
+Once the model has been generated, don't forget to run migrations afterwards
 > sequelize db:migrate
