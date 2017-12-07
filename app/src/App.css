@@ -12,6 +12,7 @@ a {
 .app-content {
   background-color: #FAFAFA;
   flex-grow: 1;
+  overflow: scroll;
 }
 
 .app-logo {

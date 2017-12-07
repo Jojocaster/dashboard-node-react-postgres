@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 import { addTask } from 'actions/tasks';
 import TextField from 'material-ui/TextField';
 
-class AddTodo extends React.Component {
+class AddTodo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,11 +18,17 @@ class AddTodo extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     if(!this.state.input.trim()) {
       return;
     }
 
-    this.props.dispatch(addTask(this.state.input));
+    let task = {
+      content: this.state.input,
+      todoId: this.props.match.params.id
+    };
+
+    this.props.dispatch(addTask(task));
     this.setState({input: ''});
   }
 
@@ -30,9 +37,7 @@ class AddTodo extends React.Component {
   }
 
   render() {
-    const {dispatch, styles} = this.props;
     return (
-      // <p>Hey</p>
       <div className="add-todo">
         <form onSubmit={this.handleSubmit}>
           <TextField
@@ -49,4 +54,4 @@ class AddTodo extends React.Component {
   }
 }
 
-export default connect()(AddTodo);
+export default withRouter(connect()(AddTodo));

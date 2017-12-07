@@ -15,8 +15,14 @@ const ApiHelper = {
   },
 
   addTask(task) {
-    api.post('/tasks' + task.todoId + '/items', {
+    return api.post(`/todos/${task.todoId}/items`, {
       content: task.content
+    });
+  },
+
+  toggleTask(task) {
+    return api.put(`/todos/${task.todoId}/${task.id}`, {
+      complete: task.complete 
     });
   },
 

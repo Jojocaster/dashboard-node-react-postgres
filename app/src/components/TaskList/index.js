@@ -9,6 +9,10 @@ class TaskList extends Component {
     this.props.fetchTasks();
   }
 
+  componentWillReceiveProps() {
+    console.log(this.props);
+  }
+
   render() {
     const {
       tasks,

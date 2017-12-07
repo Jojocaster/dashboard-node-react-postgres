@@ -2,7 +2,6 @@ import React from 'react';
 
 import { withStyles } from 'material-ui/styles';
 import Card, { CardContent } from 'material-ui/Card';
-import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
 import DeleteIcon from 'material-ui-icons/Delete';
 import Typography from 'material-ui/Typography';

@@ -5,7 +5,7 @@
   max-width: 200px;
 }
 
-.todo {
+.todolist .todo {
   font-size: 12px;
   padding: 5px 0;
   text-transform: uppercase;

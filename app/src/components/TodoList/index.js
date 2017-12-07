@@ -10,15 +10,12 @@ class TodoList extends Component {
   }
 
   render() {
-    const {
-      todos,
-      onTodoClick
-    } = this.props;
+    const { todos } = this.props;
 
     return (
       <div className="todolist">
         {todos.map(todo => (
-          <Todo key={todo.id} onTodoClick={() => onTodoClick(todo.id)} todo={todo}/>
+          <Todo key={todo.id} todo={todo}/>
         ))}
       </div>
     )
@@ -31,8 +28,7 @@ TodoList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired
     }).isRequired
-  ).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  ).isRequired
 }
 
 export default TodoList;

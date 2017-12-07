@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-import { fetchTasks } from 'actions/tasks';
+import { fetchTasks, toggleTask } from 'actions/tasks';
 import TaskList from 'components/TaskList';
 
 const getFilteredTasks = (tasks, match) => {
   if(match.params.id) {
     return tasks.filter((task) => {
-      return task.todoId === parseInt(match.params.id, 10)
+      return task.todoId === parseInt(match.params.id, 10);
     });
   } else {
     return tasks;
@@ -26,8 +24,8 @@ const mapDispatchToProps = dispatch => {
     fetchTasks: () => {
       dispatch(fetchTasks())
     },
-    onTaskClick: id => {
-      console.log(id);
+    onTaskClick: task => {
+      dispatch(toggleTask(task))
     }
   }
 }

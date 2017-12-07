@@ -15,9 +15,6 @@ class App extends Component {
         <div className="app">
           <Sidebar/>
           <div className="app-content">
-            <header className="app-header">
-              <img src={logo} className="app-logo" alt="logo" />
-            </header>
             {routes.map((route, i) => (
               <Route key={i} path={route.path} component={route.component} />
             ))}

@@ -11,8 +11,7 @@ const Todo = ({todo, onTodoClick}) => (
 );
 
 Todo.propTypes = {
-  todo: PropTypes.object.isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  todo: PropTypes.object.isRequired
 }
 
 export default Todo;
