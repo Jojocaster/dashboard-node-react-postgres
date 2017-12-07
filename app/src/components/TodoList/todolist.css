@@ -1,0 +1,12 @@
+.todolist {
+  flex-basis: 200px;
+  padding: 20px;
+  text-align: left;
+  max-width: 200px;
+}
+
+.todo {
+  font-size: 12px;
+  padding: 5px 0;
+  text-transform: uppercase;
+}

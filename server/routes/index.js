@@ -14,6 +14,7 @@ module.exports = (app) => {
   app.delete('/api/todos/:todoId', todosCtrl.destroy);
 
   //Tasks
+  app.get('/api/tasks/items', todoItemCtrl.list);
   app.post('/api/todos/:todoId/items', todoItemCtrl.create);
   app.put('/api/todos/:todoId/items/:todoItemId', todoItemCtrl.update);
   app.delete('/api/todos/:todoId/items/:todoItemId', todoItemCtrl.destroy);

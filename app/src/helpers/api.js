@@ -10,6 +10,16 @@ const ApiHelper = {
     return api.get('/todos');
   },
 
+  getTasks() {
+    return api.get('/tasks/items');
+  },
+
+  addTask(task) {
+    api.post('/tasks' + task.todoId + '/items', {
+      content: task.content
+    });
+  },
+
   createTodo(todo) {
     return api.post('/todo', {
       title: todo

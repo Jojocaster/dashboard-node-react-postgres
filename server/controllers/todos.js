@@ -18,6 +18,9 @@ module.exports = {
           model: TodoItem,
           as: 'todoItems',
         }],
+        order: [
+          ['id', 'DESC']
+        ]
       })
       .then(todos => res.status(200).send(todos))
       .catch(error => res.status(400).send(error));

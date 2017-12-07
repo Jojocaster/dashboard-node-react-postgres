@@ -11,6 +11,13 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
+  list(req, res) {
+    return TodoItem
+      .findAll()
+      .then(todoItems => res.status(200).send(todoItems))
+      .catch(error => res.status(400).send(error))
+  },
+
   update(req, res) {
     return TodoItem
       .find({
