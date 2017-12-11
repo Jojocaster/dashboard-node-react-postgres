@@ -16,6 +16,7 @@ const ApiHelper = {
 
   addTask(task) {
     return api.post(`/todos/${task.todoId}/items`, {
+      title: task.title,
       content: task.content
     });
   },

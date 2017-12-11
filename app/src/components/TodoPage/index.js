@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './todopage.css';
-import AddTask from 'containers/AddTask';
-import TasksContainer from 'containers/TasksContainer';
-import TodosContainer from 'containers/TodosContainer';
+import AddTask from '../../containers/AddTask';
+import TasksContainer from '../../containers/TasksContainer';
+import TodosContainer from '../../containers/TodosContainer';
 
 const TodoPage = (props) => (
   <div className="todo-page">
@@ -11,9 +11,7 @@ const TodoPage = (props) => (
       <TodosContainer {...props}/>
     </div>
     <div className="tasks-column">
-      {props.match.params.id && (
-        <AddTask />
-      )}
+      <AddTask />
       <TasksContainer {...props}/>
     </div>
   </div>

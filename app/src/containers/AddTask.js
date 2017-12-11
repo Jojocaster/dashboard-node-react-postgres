@@ -2,14 +2,16 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import { addTask } from 'actions/tasks';
+import { addTask } from '../actions/tasks';
+import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 
 class AddTodo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      title: '',
+      content: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,36 +20,48 @@ class AddTodo extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    if(!this.state.input.trim()) {
-      return;
-    }
-
-    let task = {
-      content: this.state.input,
-      todoId: this.props.match.params.id
-    };
+    const task = {...this.state, todoId: this.props.match.params.id};
 
     this.props.dispatch(addTask(task));
-    this.setState({input: ''});
+    this.setState({title: '', content: ''});
   }
 
   handleChange(e) {
-    this.setState({input: e.target.value});
+    const target = e.target;
+    const name = target.name;
+
+    this.setState({
+      [name]: target.value
+    });
   }
 
   render() {
+    if(!this.props.match.params.id) {
+      return null;
+    }
+
     return (
       <div className="add-todo">
         <form onSubmit={this.handleSubmit}>
           <TextField
-            id="task"
-            label="New task"
+            name="title"
+            label="Title"
             className="textfField"
             onChange={this.handleChange}
-            value={this.state.input}
+            value={this.state.title}
             margin="normal"
           />
+          <TextField
+            name="content"
+            label="Content"
+            className="textfField"
+            onChange={this.handleChange}
+            value={this.state.content}
+            margin="normal"
+          />
+          <Button type="submit" raised color="primary" className="button">
+            Primary
+          </Button>
         </form>
       </div>
     )

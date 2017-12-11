@@ -3,7 +3,9 @@ import {combineReducers} from 'redux';
 import items from './items';
 import error from './error';
 
-export default combineReducers({
+const task = combineReducers({
   items,
   error
 });
+
+export default task;

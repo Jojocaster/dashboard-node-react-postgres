@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import { fetchTasks, removeTask , toggleTask } from 'actions/tasks';
-import TaskList from 'components/TaskList';
+import { fetchTasks, removeTask , toggleTask } from '../actions/tasks';
+import TaskList from '../components/TaskList';
 
 const getFilteredTasks = (tasks, match) => {
   if(match.params.id) {

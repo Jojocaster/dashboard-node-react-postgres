@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 
-import routes from 'routes/';
+import routes from './routes/';
 
 import logo from './logo.svg';
 import './app.css';
 
-import Sidebar from 'components/Sidebar/';
+import Sidebar from './components/Sidebar/';
 
 class App extends Component {
   render() {
@@ -14,11 +14,11 @@ class App extends Component {
       <Router>
         <div className="app">
           <Sidebar/>
-          <div className="app-content">
+          <section className="app-content">
             {routes.map((route, i) => (
-              <Route key={i} path={route.path} component={route.component} />
+              <Route key={i} exact={route.exact} path={route.path} component={route.component} />
             ))}
-          </div>
+          </section>
         </div>
       </Router>
     );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './tasklist.css';
 import Task from './task';
-import ErrorMessage from 'components/ErrorMessage/';
+import ErrorMessage from '../ErrorMessage/';
 
 class TaskList extends Component {
   componentDidMount() {

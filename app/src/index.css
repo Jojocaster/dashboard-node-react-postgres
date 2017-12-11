@@ -4,7 +4,7 @@
 */
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -54,5 +54,6 @@ table {
 
 html, body, #root {
 	font-family: sans-serif;
-    height: 100%;
+  height: 100%;
+	-webkit-font-smoothing: antialiased;
 }

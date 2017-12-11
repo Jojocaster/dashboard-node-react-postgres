@@ -1,9 +1,9 @@
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-import { fetchTodos } from 'actions/todos';
+import { fetchTodos } from '../actions/todos';
 
-import TodoList from 'components/TodoList/';
+import TodoList from '../components/TodoList/';
 
 const mapStateToProps = (state, ownProps) => {
   return {

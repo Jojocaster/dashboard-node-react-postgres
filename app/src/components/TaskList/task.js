@@ -16,7 +16,7 @@ const styles = theme => ({
   },
 });
 
-const Task = ({task, removeTask, toggleTask, classes}) => (
+const Task = ({task, removeTask, toggleTask, classes, i}) => (
   <Card className={task.complete ? 'task active' : 'task'}>
     <CardContent>
       <Typography type="body1">{task.content}</Typography>
