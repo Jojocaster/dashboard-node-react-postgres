@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 
 import { fetchTasks, removeTask , toggleTask } from 'actions/tasks';
-import { getActiveSortedTasks } from 'selectors/';
+import { makeGetActiveSortedTasks } from 'selectors/';
 
 import DashboardPage from './dashboardPage';
 
 const mapStateToProps = (state, ownProps) => {
+  const getActiveSortedTasks = makeGetActiveSortedTasks();
   return {
     tasks: getActiveSortedTasks(state)
   }
