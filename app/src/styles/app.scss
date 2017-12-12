@@ -1,0 +1,30 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app {
+  display: flex;
+  height: 100%;
+  text-align: center;
+}
+
+.appContent {
+  background-color: #FAFAFA;
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+// .app-logo {
+//   animation: app-logo-spin infinite 20s linear;
+//   height: 80px;
+// }
+
+// .app-intro {
+//   font-size: large;
+// }
+
+// @keyframes app-logo-spin {
+//   from { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// }

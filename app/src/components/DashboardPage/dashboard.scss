@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import '../../styles/variables';
+
+.dashboard {
+  align-items: center;
+  color: #212121;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  flex-direction: row;
+  height: 100%;
+  section {
+    padding: 60px;
+    vertical-align: top;
+    width: 50%;
+  }
+  .welcome {
+    text-align: left;
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+    }
+    p {
+      line-height: 1.5;
+      margin-top: 50px;
+    }
+  }
+  .tasks {
+    background-color: darken(#FAFAFA, 5%);
+    height: 100%;
+    position: relative;
+  }
+}

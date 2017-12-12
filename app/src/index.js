@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './app';
-import registerServiceWorker from './registerServiceWorker';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from './reducers';
 import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+import './styles/index.scss';
+import App from './app';
+import reducer from './reducers';
 import ApiHelper from 'helpers/api';
+import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
   reducer,
@@ -16,9 +17,7 @@ const store = createStore(
 
 store.subscribe(() => {
   console.log('new state', store.getState());
-})
-
-console.log(store.getState());
+});
 
 ReactDOM.render(
   <Provider store={store}>

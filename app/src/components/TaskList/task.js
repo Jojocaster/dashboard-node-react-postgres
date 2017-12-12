@@ -19,7 +19,7 @@ const styles = theme => ({
 const Task = ({task, removeTask, toggleTask, classes, i}) => (
   <Card className={task.complete ? 'task active' : 'task'}>
     <CardContent>
-      <Typography type="body1">{task.content}</Typography>
+      <Typography type="body1">{task.title}</Typography>
       <IconButton onClick={removeTask} className={classes.button} aria-label="Delete">
         <DeleteIcon />
       </IconButton>
