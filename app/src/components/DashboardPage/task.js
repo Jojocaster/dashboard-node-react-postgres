@@ -6,7 +6,7 @@ import styles from './task.scss';
 class Task extends Component {
   constructor(props) {
     super(props);
-    this.state = {state: ''};
+    this.state = {currentState: ''};
   }
 
   componentDidMount() {
@@ -18,33 +18,28 @@ class Task extends Component {
   }
 
   handleState(newProps = this.props) {
+    const {currentState} = this.state;
     const {index, tasksLength} = this.props;
     const {activeTask} = newProps;
     
-    let newState;
+    let newState = styles.inactive;
   
     if(index === activeTask) {
       newState = styles.active;
     } else if(index  === activeTask + 1 || activeTask === tasksLength -1 && index === 0) {
-      newState = styles.next;
+        newState = styles.next;
     } else if(index === activeTask - 1 || activeTask === 0 && index === tasksLength - 1) {
-      newState = styles.previous;
-    } else {
-      newState = styles.inactive;
+        newState = (currentState === styles.next || currentState === styles.inactive) ? styles.back : styles.previous;
     }
   
-    if(this.state.state === styles.inactive && newState === styles.previous) {
-      newState = styles.back;
-    }
-  
-    this.setState({state: newState});
+    this.setState({currentState: newState});
   }
 
   render() {
     const {index, task, tasksLength} = this.props;
 
     return (
-      <div className={styles.task + ' ' + this.state.state}>
+      <div className={styles.task + ' ' + this.state.currentState}>
         <header className={styles.header}>Task {index + 1} of {tasksLength}</header>
         <div className={styles.content}>
           <h1>{task.title}</h1>
