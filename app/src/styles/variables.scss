@@ -1,2 +1,16 @@
+//SASS VARIABLES
+
+$appWidth: 1040px;
+$appColor: #691AFA;
+$appBg: #f2f7fa;
 $fontGray: #bdc3c7;
+$fontBlack: #212121;
 $materialEase: cubic-bezier(.62,.28,.23,.99);
+
+.appContainer {
+  display: block;
+  margin: 0 auto;
+  max-width: $appWidth;
+  padding: 0 40px;
+  width: 100%;
+}

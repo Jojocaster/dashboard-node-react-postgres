@@ -14,7 +14,7 @@ $smallFont: 12px;
   text-align: left;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: transform .5s $materialEase, opacity .25s $materialEase;
+  transition: transform .4s $materialEase, opacity .2s $materialEase;
   width: 80%;
   z-index: 0;
   &.active {
@@ -25,21 +25,21 @@ $smallFont: 12px;
   &.next {
     opacity: 1;
     transform: translate(-50%, -45%) scale(.95);
-    transition: opacity 0.1s .4s $materialEase, transform 0.5s $materialEase;
+    transition: opacity 0.1s .3s $materialEase, transform 0.4s $materialEase;
     z-index: 1;
   }
   &.previous {
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -100%);
-    transition: opacity 0.25s $materialEase, transform 0.5s $materialEase;
+    transition: opacity 0.4s $materialEase, transform 0.4s $materialEase;
     z-index: 3;
   }
   &.inactive {
     z-index: 0;
     opacity: 1;
     transform: translate(-50%, -40%) scale(.9);
-    transition: opacity 0.25s 0.25s $materialEase, transform 0.25s $materialEase;
+    transition: opacity 0.2s 0.2s $materialEase, transform 0.2s $materialEase;
   }
   &.back {
     opacity: 0;
@@ -51,7 +51,7 @@ $smallFont: 12px;
 }
 
 .header {
-  color: $fontGray;
+  color: $appColor;
   display: block;
   font-size: $smallFont;
   font-weight: bold;
@@ -70,13 +70,11 @@ $smallFont: 12px;
   font-weight: bold;
   text-transform: uppercase;
   .day {
+    // color: $appColor;
     font-size: 30px;
     margin-top: 20px;
   }
   .month {
     margin-top: 5px;
-    span {
-      margin-left: 5px;
-    }
   }
 }

@@ -1,20 +1,44 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-import './todopage.css';
-import AddTask from '../../containers/AddTask';
-import TasksContainer from '../../containers/TasksContainer';
-import TodosContainer from '../../containers/TodosContainer';
+import { fetchTasks, removeTask , toggleTask } from 'actions/tasks';
+import { fetchTodos } from 'actions/todos';
 
-const TodoPage = (props) => (
-  <div className="todo-page">
-    <div className="todos-column">
-      <TodosContainer {...props}/>
-    </div>
-    <div className="tasks-column">
-      <AddTask />
-      <TasksContainer {...props}/>
-    </div>
-  </div>
-)
+import TodoPage from './todoPage';
 
-export default TodoPage;
+const getFilteredTasks = (tasks, {params}) => {
+  if(params.id) {
+    return tasks.filter(task => {
+      return task.todoId === parseInt(params.id, 10);
+    });
+  } else {
+    return tasks;
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    todos: state.todos,
+    tasks: getFilteredTasks(state.tasks.items, ownProps.match)
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchTasks: () => {
+      dispatch(fetchTasks())
+    },
+    removeTask: task => {
+      dispatch(removeTask(task))
+    },
+    toggleTask: task => {
+      dispatch(toggleTask(task))
+    },
+    fetchTodos: () => {
+      dispatch(fetchTodos());
+    }
+  }
+}
+
+const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(TodoPage);
+
+export default TodosContainer;

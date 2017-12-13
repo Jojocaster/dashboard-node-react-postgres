@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './tasklist.css';
 import Task from './task';
-import ErrorMessage from '../ErrorMessage/';
+// import ErrorMessage from '../ErrorMessage/';
 
 class TaskList extends Component {
   componentDidMount() {
@@ -19,8 +18,8 @@ class TaskList extends Component {
     } = this.props;
 
     return (
-      <div className="tasklist">
-        <ErrorMessage error={error}/>
+      <div>
+        {/* <ErrorMessage error={error}/> */}
         {tasks.map(task => (
           <Task key={task.id} task={task} removeTask={() => removeTask(task)} toggleTask={() => toggleTask(task)}/>
         ))}

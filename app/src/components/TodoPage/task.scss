@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+
+$todoWidth: 100px;
+$dateWidth: 150px;
+
+.task {
+  background-color: white;
+  border-radius: 2px;
+  display: block;
+  margin: 10px 0;
+  padding: 20px 20px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  &:after {
+    background-color: #2ecc71;
+    content: '';
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(0);
+    transition: transform .2s .1s $materialEase, opacity .2s $materialEase;
+    width: 3px;
+  }
+  &.active:after{
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  span {
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+  }
+  .todo {
+    color: $appColor;
+    font-weight: 700;
+    text-align: center;
+    width: $todoWidth;
+  }
+  .title {
+    width: calc(100% - #{$todoWidth} - #{$dateWidth});
+  }
+  .date {
+    text-align: right;
+    width: $dateWidth;
+    .day {
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .month {
+      color: $fontGray;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 5px;
+      text-transform: uppercase;
+    }
+  }
+}

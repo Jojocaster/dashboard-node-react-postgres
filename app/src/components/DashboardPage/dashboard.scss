@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import '../../styles/variables';
 
 .dashboard {
   align-items: center;
   color: #212121;
   display: flex;
-  font-family: 'Open Sans', sans-serif;
   flex-direction: row;
   height: 100%;
   section {
@@ -25,8 +23,11 @@
     }
   }
   .tasks {
-    background-color: darken(#FAFAFA, 5%);
+    // background-color: darken(#FAFAFA, 5%);
     height: 100%;
     position: relative;
+    div:focus {
+      outline: 0;
+    }
   }
 }

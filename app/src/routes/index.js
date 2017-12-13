@@ -1,5 +1,5 @@
 import DashboardContainer from '../components/DashboardPage/';
-import TodoPage from '../components/TodoPage';
+import TodosContainer from '../components/TodoPage/';
 
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/todos/:id?',
-    component: TodoPage
+    component: TodosContainer
   }
 ]
 

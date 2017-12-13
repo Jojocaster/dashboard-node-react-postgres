@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.header {
+  background-color: white;
+  font-weight: 700;
+  padding: 40px 0;
+  .title {
+    color: $appColor;
+    display: inline-block;
+    max-width: 100%;
+    text-align: left;
+    width: 100%;
+  }
+  .content {
+    display: inline-block;
+    max-width: 50%;
+    text-align: right;
+    width: auto;
+  }
+}
+
+.inner {
+  composes: appContainer from '../../styles/variables.scss';
+}

@@ -1,5 +1,7 @@
+@import '../../styles/variables';
+
 .sidebar {
-  background-color: #212121;
+  background-color: $fontBlack;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);  
   flex-basis: 50px;
   flex-shrink: 0; 
@@ -12,17 +14,20 @@
     li {
       padding: 10px 0;
       position: relative;
-      transition: background-color .2s ease;
+      transition: background-color .2s $materialEase;
       width: 100%;
       &.active {
         &:before {
           opacity: 1;
           transform: scaleY(1);
         }
-        background-color: #161616;
+        // background-color: #161616;
+        a {
+          color: $appColor;
+        }
       }
       &:before {
-        background-color: #61dbfb;
+        background-color: $appColor;
         content: '';
         height: 100%;
         left: 0;
@@ -31,7 +36,7 @@
         top: 0;
         transform: scaleY(0);
         transform-origin: center;
-        transition: transform .1s ease-out, opacity 50ms ease;
+        transition: transform .2s $materialEase, opacity 100ms $materialEase;
         width: 3px;
       }
       a {

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
 
-import styles from './task.scss';
+import styles from './taskItem.scss';
 
-class Task extends Component {
+class TaskItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {currentState: ''};
+    this.state = {currentState: styles.inactive};
   }
 
   componentDidMount() {
-    this.handleState();
+    this.handleState();  
   }
 
   componentWillReceiveProps(newProps) {
@@ -27,9 +27,9 @@ class Task extends Component {
     if(index === activeTask) {
       newState = styles.active;
     } else if(index  === activeTask + 1 || activeTask === tasksLength -1 && index === 0) {
-        newState = styles.next;
+      newState = styles.next;
     } else if(index === activeTask - 1 || activeTask === 0 && index === tasksLength - 1) {
-        newState = (currentState === styles.next || currentState === styles.inactive) ? styles.back : styles.previous;
+      newState = (currentState === styles.next || currentState === styles.inactive) ? styles.back : styles.previous;
     }
   
     this.setState({currentState: newState});
@@ -52,10 +52,7 @@ class Task extends Component {
             <Moment format="DD">{task.due}</Moment>
           </div>
           <div className={styles.month}>
-            <Moment format="MMMM">{task.due}</Moment>
-            <span>
-              '<Moment format="YY">{task.due}</Moment>
-            </span>
+            <Moment format="MMMM 'YY">{task.due}</Moment>
           </div>
         </footer>
       </div>
@@ -63,4 +60,4 @@ class Task extends Component {
   }
 }
 
-export default Task;
+export default TaskItem;

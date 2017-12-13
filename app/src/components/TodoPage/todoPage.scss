@@ -1,0 +1,20 @@
+.content {
+  composes: appContainer from '../../styles/variables.scss';
+  display: flex;
+  flex-direction: row;
+}
+
+.todos {
+  font-size: 14px;
+  font-weight: 600;
+  flex-basis: 200px;
+  max-width: 200px;
+  margin-bottom: 10px;
+  padding: 20px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.tasks {
+  width: 100%;
+}

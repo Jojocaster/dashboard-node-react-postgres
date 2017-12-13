@@ -17,7 +17,7 @@ class App extends Component {
           <Sidebar/>
           <section className={styles.appContent}>
             {routes.map((route, i) => (
-              <Route key={i} exact={route.exact} path={route.path} component={route.component} />
+              <Route key={i} exact={route.exact} path={route.path} component={route.component}/>
             ))}
           </section>
         </div>
