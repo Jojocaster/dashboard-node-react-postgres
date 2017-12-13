@@ -41,6 +41,7 @@
     "promise": "8.0.1",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-animate-height": "^0.10.9",
     "react-dev-utils": "^4.1.0",
     "react-dom": "^16.0.0",
     "react-moment": "^0.6.8",
