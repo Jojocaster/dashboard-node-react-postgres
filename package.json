@@ -1,5 +1,5 @@
 {
-  "name": "dashboard-node-react",
+  "name": "dashboard-node-react-postgres",
   "version": "1.0.0",
   "description": "React Dashboard connected to Express and Postgres",
   "main": "app.js",
