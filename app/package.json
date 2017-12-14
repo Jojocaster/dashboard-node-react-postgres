@@ -63,7 +63,7 @@
   },
   "scripts": {
     "start": "NODE_PATH=src node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "NODE_PATH=src node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

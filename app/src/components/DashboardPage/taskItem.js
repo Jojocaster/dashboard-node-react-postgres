@@ -6,7 +6,7 @@ import styles from './taskItem.scss';
 class TaskItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {currentState: styles.inactive};
+    this.state = {currentState: styles.back};
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class TaskItem extends Component {
   
     if(index === activeTask) {
       newState = styles.active;
-    } else if(index  === activeTask + 1 || activeTask === tasksLength -1 && index === 0) {
+    } else if(index  === activeTask + 1 || (activeTask === tasksLength -1 && index === 0)) {
       newState = styles.next;
     } else if(index === activeTask - 1 || activeTask === 0 && index === tasksLength - 1) {
       newState = (currentState === styles.next || currentState === styles.inactive) ? styles.back : styles.previous;

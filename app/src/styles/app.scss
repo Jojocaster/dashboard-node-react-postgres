@@ -1,12 +1,12 @@
 @import 'variables';
 
 ::-moz-selection {
-  background-color: transparentize($appColor, .3);
+  background-color: rgba($appColor, .7);
   color: white;
 }
 
 ::selection {
-  background-color: transparentize($appColor, .3);
+  background-color: rgba($appColor, .7);
   color: white;
 }
 
